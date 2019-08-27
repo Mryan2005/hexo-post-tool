@@ -1,0 +1,21 @@
+language: Python
+install:
+  - wget http://download-ib01.fedoraproject.org/pub/epel/6/x86_64/Packages/e/enca-1.19-1.el6.x86_64.rpm
+  - rpm -ivh enca-1.19-1.el6.x86_64.rpm
+script:
+  - cd posts/
+  - enconv -L zh_CN -x UTF-8 *
+  - git init
+  - cd ..
+  - git clone https://github.com/Mryan2005/mryan2005.github.io.git
+  - mv posts/* mryan2005.github.io/source/_posts/
+deploy:
+  provider: pages
+  repo: "Mryan2005/mryan2005.github.io"
+  local_dir: "mryan2005.github.io/"
+  keep_history: false
+  skip_cleanup: true
+  target_branch: src
+  github_token: $GITHUB_TOKEN
+
+
