@@ -1,9 +1,9 @@
 language: Python
 Python:
   - '3.6'
+sudo: true
 install:
-  - wget http://download-ib01.fedoraproject.org/pub/epel/6/x86_64/Packages/e/enca-1.19-1.el6.x86_64.rpm
-  - rpm -ivh enca-1.19-1.el6.x86_64.rpm
+  - apt-get installenca
 script:
   - cd posts/
   - enconv -L zh_CN -x UTF-8 *
