@@ -1,9 +1,9 @@
 language: Python
 Python:
   - '3.6'
-sudo: true
+sudo: required
 install:
-  - apt-get install enca -y
+  - sudo apt-get install enca -y
 script:
   - cd posts/
   - enconv -L zh_CN -x UTF-8 *
