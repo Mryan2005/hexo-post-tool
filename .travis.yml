@@ -3,7 +3,7 @@ Python:
   - '3.6'
 sudo: true
 install:
-  - apt-get installenca
+  - apt-get install enca -y
 script:
   - cd posts/
   - enconv -L zh_CN -x UTF-8 *
