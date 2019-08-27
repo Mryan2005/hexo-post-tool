@@ -5,6 +5,7 @@ sudo: required
 install:
   - sudo apt-get install enca -y
 script:
+  - mv core/*.md posts/
   - cd posts/
   - enconv -L zh_CN -x UTF-8 *
   - git init
